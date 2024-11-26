@@ -1,0 +1,38 @@
+{% extends 'baseapp/base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <strong>{{ members_record.first_name|title }} {{ members_record.last_name|title }}</strong>
+
+    </div>
+    <div class="card-body">
+      
+     <p class="card-text">  <strong>Phone: </strong>{{ members_record.phone }}</p>
+      <p class="card-text"> <strong>Address: </strong>{{ members_record.Address}}</p>
+      <p class="card-text"> <strong>Email: </strong>{{ members_record.email }}</p>
+      <p class="card-text"> <strong>Country: </strong> {{ members_record.Country}}</p>
+      <p class="card-text"> <strong>Coynty: </strong>{{ members_record.County }}</p>
+      <p class="card-text"> <strong>City: </strong>{{ members_record.city }}</p>
+      <p class="card-text"> <strong>Date: </strong>{{ members_record.created_at }}</p>
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+  <a href="{% url 'del_members' members_record.id  %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update_members' members_record.id  %}" class="btn btn-danger">Update</a>
+          
+          
+         
+        
+          
+         
+          
+         
+
+
+{% endblock %}
